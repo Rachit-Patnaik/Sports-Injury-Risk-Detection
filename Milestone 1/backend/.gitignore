@@ -1,0 +1,35 @@
+# Virtual Environment
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VS Code
+.vscode/
+
+# Environment variables
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Generated Reports
+reports/
+
+# Generated Images
+*.png
+*.jpg
+
+# Videos
+videos/*.mp4
+videos/*.avi
+videos/*.mov
+
+# Extracted frames
+videos/frames/
+
+# Keep the folder itself
+!videos/.gitkeep
