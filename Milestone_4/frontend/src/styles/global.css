@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   GLOBAL DARK THEME & FAILSAFE LAYOUT ENGINE
+   ========================================================================== */
+
+* {
+  box-sizing: border-box !important;
+}
+
+body {
+  background-color: #0b0f19 !important;
+  color: #f8fafc !important;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 100vh !important;
+}
+
+/* ==========================================================================
+   CARD & GLASSMORPHISM CONTAINER STYLES
+   ========================================================================== */
+
+.sports-card {
+  background-color: #111827 !important;
+  border: 1px solid #1f2937 !important;
+  border-radius: 1rem !important;
+  padding: 1.25rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.2s ease-in-out !important;
+  color: #f8fafc !important;
+}
+
+.sports-card:hover {
+  border-color: #4f46e5 !important;
+  box-shadow: 0 15px 30px -5px rgba(79, 70, 229, 0.25) !important;
+}
+
+/* ==========================================================================
+   EXPLICIT GRID SYSTEM (PREVENTS VERTICAL COLLAPSE)
+   ========================================================================== */
+
+.sports-grid-4 {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 1.25rem !important;
+  width: 100% !important;
+}
+
+.sports-grid-3 {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 1.5rem !important;
+  width: 100% !important;
+}
+
+.sports-grid-2 {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1.5rem !important;
+  width: 100% !important;
+}
+
+@media (max-width: 1024px) {
+  .sports-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .sports-grid-3 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+}
+
+@media (max-width: 640px) {
+  .sports-grid-4, .sports-grid-2 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+}
+
+/* ==========================================================================
+   FLEXBOX & SPACING UTILITIES
+   ========================================================================== */
+
+.flex-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+.flex-between {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.flex-center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.flex-col {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.gap-2 { gap: 0.5rem !important; }
+.gap-3 { gap: 0.75rem !important; }
+.gap-4 { gap: 1rem !important; }
+
+/* ==========================================================================
+   RISK BADGES & INDICATORS
+   ========================================================================== */
+
+.risk-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.35rem 0.75rem !important;
+  border-radius: 9999px !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+}
+
+.risk-badge-high {
+  background-color: rgba(244, 63, 94, 0.2) !important;
+  color: #fda4af !important;
+  border: 1px solid rgba(244, 63, 94, 0.5) !important;
+}
+
+.risk-badge-moderate {
+  background-color: rgba(245, 158, 11, 0.2) !important;
+  color: #fde047 !important;
+  border: 1px solid rgba(245, 158, 11, 0.5) !important;
+}
+
+.risk-badge-low {
+  background-color: rgba(16, 185, 129, 0.2) !important;
+  color: #6ee7b7 !important;
+  border: 1px solid rgba(16, 185, 129, 0.5) !important;
+}
+
+/* ==========================================================================
+   GAUGE & SCROLLBAR
+   ========================================================================== */
+
+.gauge-circle-bg {
+  stroke: #1f2937 !important;
+  stroke-width: 12 !important;
+}
+
+.gauge-circle-progress {
+  stroke-width: 12 !important;
+  stroke-linecap: round !important;
+  transition: stroke-dashoffset 1s ease-out !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}

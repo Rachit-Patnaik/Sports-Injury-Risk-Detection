@@ -71,3 +71,20 @@ Milestone_3/outputs/
 *.tmp
 *.bak
 *.cache
+
+# ==========================================================
+# Node / Dependencies
+# ==========================================================
+
+node_modules/
+**/node_modules/
+dist/
+build/
+
+# ==========================================================
+# Milestone 4 Outputs
+# ==========================================================
+
+Milestone_4/backend/processed_output/
+**/processed_output/
+*.mp4
