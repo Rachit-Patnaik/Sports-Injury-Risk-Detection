@@ -32,6 +32,118 @@ def calculate_angle(a, b, c):
 def health_check():
     return {"status": "online", "engine": "OpenCV Kinematic Engine v2.4", "version": "2.4.0"}
 
+@app.get("/api/athletes")
+def get_athletes():
+    return [
+        {
+            "id": "ATH-8842",
+            "name": "Rachit Patnaik",
+            "role": "Lead Researcher / Athlete",
+            "sport": "Sprinting",
+            "age": 20,
+            "weight": "72 kg",
+            "height": "178 cm",
+            "riskLevel": "Moderate",
+            "riskScore": 18,
+            "gaitSymmetry": "94.2%",
+            "lastAssessment": "2026-08-10",
+            "primaryFocus": "Right Knee Valgus",
+            "pastInjuries": "Mild Hamstring Strain (2025)",
+        },
+        {
+            "id": "ATH-9102",
+            "name": "Marcus Vance",
+            "role": "Forward",
+            "sport": "Basketball",
+            "age": 22,
+            "weight": "88 kg",
+            "height": "194 cm",
+            "riskLevel": "High",
+            "riskScore": 64,
+            "gaitSymmetry": "86.4%",
+            "lastAssessment": "2026-08-08",
+            "primaryFocus": "ACL Patellar Flexion",
+            "pastInjuries": "ACL Reconstruction (2024)",
+        },
+        {
+            "id": "ATH-7431",
+            "name": "Sophia Chen",
+            "role": "Midfielder",
+            "sport": "Soccer",
+            "age": 21,
+            "weight": "61 kg",
+            "height": "168 cm",
+            "riskLevel": "Low",
+            "riskScore": 8,
+            "gaitSymmetry": "97.1%",
+            "lastAssessment": "2026-08-05",
+            "primaryFocus": "Ankle Dorsiflexion",
+            "pastInjuries": "None",
+        },
+        {
+            "id": "ATH-6219",
+            "name": "Alex Rivera",
+            "role": "Pitcher",
+            "sport": "Baseball",
+            "age": 23,
+            "weight": "82 kg",
+            "height": "185 cm",
+            "riskLevel": "Moderate",
+            "riskScore": 32,
+            "gaitSymmetry": "91.0%",
+            "lastAssessment": "2026-08-01",
+            "primaryFocus": "Shoulder Internal Rotation",
+            "pastInjuries": "Rotator Cuff Tendonitis (2025)",
+        },
+    ]
+
+@app.post("/auth/login")
+def auth_login():
+    return {
+        "access_token": "mock-jwt-token-sportsai-2026",
+        "token_type": "bearer",
+        "user": {
+            "name": "Rachit Patnaik",
+            "email": "rachitpatnaik15@gmail.com",
+            "role": "Lead Researcher"
+        }
+    }
+
+@app.get("/predict")
+def predict_risk():
+    return {
+        "ACL_Risk": "Low",
+        "Hamstring_Risk": "Low",
+        "Shoulder_Risk": "Moderate",
+        "Gait_Symmetry": "94.2%"
+    }
+
+@app.get("/report")
+def get_report():
+    return {
+        "job_id": "SAI-2026-8842",
+        "Activity": "Running",
+        "Overall Score": 18.0,
+        "Overall Risk": "MODERATE",
+        "Predictions": {
+            "ACL Risk": "Low",
+            "Hamstring Risk": "Low",
+            "Shoulder Risk": "Low",
+            "Gait Symmetry": "94.2%"
+        },
+        "Anomalies": {
+            "Knee": "Mean Flexion 142.5° (Min: 110.0°)",
+            "Hip": "Normal Mechanics",
+            "Shoulder": "Symmetrical Swing",
+            "Gait": "Normal Alignment"
+        },
+        "Recommendations": [
+            "Average detected knee extension is 142.5°. Maintain movement control drills during landing.",
+            "Incorporate single-leg landing stabilization drills (3 sets x 8 reps per leg).",
+            "Perform eccentric hamstring curls twice weekly to balance joint force distribution."
+        ]
+    }
+
 @app.post("/api/analyze")
 async def analyze_video(file: UploadFile = File(...), activity: str = Form("Running")):
     job_id = str(uuid.uuid4())[:8]
