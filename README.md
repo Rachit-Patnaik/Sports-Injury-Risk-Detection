@@ -1,61 +1,85 @@
-# Sports Injury Risk Detection
+<div align="center">
 
-![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![License MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+#  Sports Injury Risk Detection
 
-A modular, milestone-based AI system that analyzes pose estimation data and biomechanical metrics to predict potential sports injuries, detect movement anomalies, assess overall injury risk, and deliver personalized prevention recommendations — served through a modern React web dashboard and a secure, role-based FastAPI backend.
+### AI-Powered Biomechanical Analysis Platform for Athletic Injury Prevention
 
----
+[![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![React 18](https://img.shields.io/badge/React-18.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
-## 📌 Project Overview
+*Analyzing athlete movement videos with computer vision, fusing wearable telemetry, and generating clinically verified injury‑risk reports — end to end.*
 
-Sports injuries are often preceded by subtle, repeatable movement faults — compensations that are hard to catch with the naked eye but show up clearly in joint kinematics over time. This project builds an end-to-end pipeline that:
-
-1. **Extracts pose landmarks** from athlete movement video using MediaPipe & OpenCV.
-2. **Converts landmarks into interpretable biomechanical features** (joint angles, angular velocity, range of motion, symmetry).
-3. **Fuses multi-modal sensor telemetry** by overlaying vision kinematic curves with wearable IMU impact data ($G$-force).
-4. **Scores injury risk and flags anomalous movement patterns** (e.g., knee valgus, excessive ground impact).
-5. **Generates downloadable clinical PDF reports** with mobile QR verification for instant digital access.
-
-The goal is to move from **reactive injury treatment** to **proactive injury prevention**.
+</div>
 
 ---
 
-## 🚀 Features
+## 📌 Executive Summary
 
-- 🎥 **Pose Estimation**: Landmark extraction from video using MediaPipe Pose Landmarker & OpenCV.
-- 📐 **Multi-Joint Biomechanical Feature Extraction**: Calculates joint angles and angular velocity ($\omega = \frac{d\theta}{dt}$) for knees, hips, shoulders, and ankles.
-- 📊 **Multi-Modal IMU Sensor Fusion**: Synchronized dual-axis Recharts telemetry overlaying joint flexion velocity against simulated wearable IMU impact acceleration ($G$-force).
-- ⚠️ **Injury Risk Prediction & Scoring**: Computes overall movement hazard scores and categorizes risk levels (Low, Moderate, High).
-- 🔍 **Movement Anomaly Detection**: Automatic detection of critical mechanical defects like knee valgus overload and asymmetric gait.
-- 💡 **Personalized Prevention Recommendations**: Contextual drill and movement guidance based on kinematic thresholds.
-- 📄 **Automated PDF Clinical Report**: Renders professional assessment summaries complete with metadata, risk heatmaps, diagnostic tables, and a mobile QR verification code.
-- 🔒 **JWT Authentication & Role-Based Access Control (RBAC)**: Multi-role support for Physiotherapists, Coaches, Athletes, and Researchers.
-- ⚡ **Interactive Web Dashboard**: React 18 + Vite frontend with Material UI / Lucide icons and dark-mode styling.
+Sports injuries are often preceded by subtle, repeatable movement faults — compensations that are hard to catch with the naked eye but show up clearly in joint kinematics over time. This platform builds an end-to-end prevention pipeline:
+
+1. **Pose Landmark Extraction** — Tracks keypoints across movement video frames via MediaPipe & OpenCV.
+2. **Biomechanical Kinematics** — Computes real-time joint angles, flexion velocity, range of motion, and bilateral symmetry.
+3. **Multi-Modal Sensor Fusion** — Overlays vision kinematic curves with wearable IMU impact telemetry (G-force).
+4. **Injury Risk Scoring** — Detects mechanical defects (knee valgus, ground impact overload) and classifies overall risk.
+5. **Clinical PDF Generation** — Exports printable, A4 assessment summaries featuring diagnostic heatmaps and mobile QR verification codes.
 
 ---
 
-## 🧩 Milestone Progress
+## 📸 Screenshots
 
-| Milestone | Scope | Status |
-| :--- | :--- | :---: |
-| **1 — Foundation** | PostgreSQL setup, SQLAlchemy models, JWT auth, RBAC routers | ✅ Complete |
-| **2 — Pose Pipeline** | Video ingestion, landmark extraction, CSV export, skeleton visualization | ✅ Complete |
-| **3 — Biomechanics & API** | Joint angle calculation, injury prediction, risk scoring, FastAPI exposure | ✅ Complete |
-| **4 — Dashboard & Sensor Fusion** | Full React dashboard, video processing engine, dual-axis IMU fusion, PDF clinical generator with QR verification | ✅ Complete |
+| Dashboard | Live Analysis |
+|---|---|
+| ![Dashboard](./assets/dashboard.png.png) | ![Live Analysis](./assets/livescreen.png.png) |
+
+| AI Insights | Athlete Profile |
+|---|---|
+| ![AI Insights](./assets/AiInsights.png.png) | ![Profile](./assets/Profile.png.png) |
+
+| Athletes List | Reports |
+|---|---|
+| ![Profiles](./assets/Profiles.png.png) | ![Reports](./assets/Reports.png.png) |
+
+<p align="center">
+  <img src="./assets/Downloadedpdf.png.png" alt="Downloaded Clinical PDF Report" width="600"/>
+  <br/><em>Downloaded clinical PDF report with QR verification</em>
+</p>
 
 ---
 
-## 📁 Project Structure
+## 🚀 Core Features
 
-```text
+| | |
+|---|---|
+| 🎥 **Biomechanical Pose Estimation** | Automatic joint landmark tracking using MediaPipe Pose Landmarker & OpenCV for kinematic motion analysis. |
+| 📐 **Kinematic Feature Extraction** | Calculates joint angles and angular velocity (ω = dθ/dt) for knees, hips, shoulders, and ankles. |
+| 📊 **Multi-Modal IMU Sensor Fusion** | Synchronized dual-axis Recharts telemetry overlaying joint flexion velocity against simulated wearable IMU impact acceleration (G-force). |
+| 🚨 **Injury Risk Prediction & Anomaly Detection** | Automatically flags mechanical defects such as knee valgus collapse and asymmetric gait mechanics. |
+| 📄 **Print-Isolated Clinical PDF Reports** | Renders 2-page assessment summaries complete with metadata, risk heatmaps, diagnostic tables, and scannable QR codes for mobile access. |
+| 🔐 **JWT Auth & Role-Based Access Control** | Multi-role interface tailored for Athletes, Coaches, Physiotherapists, Sports Scientists, and Administrators. |
+| ⚡ **Interactive Web Dashboard** | React 18 + Vite frontend with dark-mode UI styling and real-time canvas overlays. |
+
+---
+
+## 🧩 Milestone Completion Overview
+
+| Milestone | Scope & Deliverables | Status |
+|:---|:---|:---:|
+| **1 — Foundation & Security** | PostgreSQL schema, SQLAlchemy ORM models, JWT authentication, and RBAC routers | ✅ Complete |
+| **2 — Pose Pipeline** | Video ingestion, MediaPipe landmark extraction, CSV telemetry export, and skeleton visualization | ✅ Complete |
+| **3 — Biomechanics & API** | Joint angle calculation engine, movement anomaly classification, risk scoring, and REST API endpoints | ✅ Complete |
+| **4 — Web Dashboard & Sensor Fusion** | React web application, real-time video processing engine, dual-axis IMU + vision overlay, and automated PDF clinical report with QR verification | ✅ Complete |
+
+---
+
+## 🏗 Project Architecture
+
+```
 Sports-Injury-Risk-Detection/
-│
-├── Milestone_1/                   # Auth, DB Models, PostgreSQL Schemas
+├── Milestone_1/                   # Auth, DB Models & Schemas
 │   ├── auth/                      # JWT authentication & RBAC routers
 │   └── models.py                  # SQLAlchemy ORM models
 │
@@ -65,19 +89,99 @@ Sports-Injury-Risk-Detection/
 │
 ├── Milestone_3/                   # Biomechanical Engine & Prediction APIs
 │   └── backend/
-│       ├── injury_prediction/     # Risk scoring, anomaly detection, recommendations
+│       ├── injury_prediction/     # Risk scoring & anomaly detection
 │       ├── biomechanics/          # Angle calculator & feature extraction
 │       ├── api.py                 # FastAPI endpoint definitions
 │       └── main.py                # Server execution entrypoint
 │
 ├── Milestone_4/                   # Web Dashboard, Sensor Fusion & Reports
-│   ├── backend/                   # Kinematic processing API & MP4 output generator
-│   │   ├── main.py                # Video analysis & IMU telemetry calculation
-│   │   └── processed_output/      # Skeleton-annotated output video MP4s
-│   └── frontend/                  # React + Vite Web Application
+│   ├── backend/                   # Kinematic processing API & MP4 generator
+│   │   ├── main.py                # Main FastAPI server & video processing pipeline
+│   │   └── processed_output/      # Processed & annotated MP4 video exports
+│   └── frontend/                  # React + Vite Dashboard Application
 │       └── src/
 │           ├── components/        # SensorFusionChart, ClinicalReportPDF, Header
-│           └── pages/             # Upload, Dashboard, Insights, Live Screening
+│           └── pages/             # Upload, Dashboard, Insights, Live, Athletes, Reports
 │
 ├── .gitignore                     # Git exclusion rules
 └── README.md                      # Project documentation
+```
+
+---
+
+## 💻 Tech Stack
+
+| Category | Tools & Libraries |
+|---|---|
+| **Backend Framework** | Python 3.12, FastAPI, Uvicorn, Pydantic |
+| **Frontend Framework** | React 18, Vite, Recharts, Framer Motion, Material UI (MUI) |
+| **Computer Vision & Kinematics** | OpenCV, MediaPipe (PoseLandmarker), NumPy, Pandas |
+| **PDF & Verification** | jsPDF, html2canvas, qrcode.react |
+| **Database & Auth** | PostgreSQL, SQLAlchemy, Python-Jose (JWT), Passlib |
+| **Deployment & Containers** | Docker, Docker Compose |
+
+---
+
+## ⚙️ Quick Start Guide
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/springboardmentor1234r/Sports-Injury-Risk-.git
+cd Sports-Injury-Risk-Detection
+git checkout Rachit_Patnaik
+```
+
+### 2. Backend Setup (FastAPI)
+```bash
+cd Milestone_4/backend
+python -m venv venv
+
+# Activate Virtual Environment (Windows PowerShell):
+.\venv\Scripts\activate
+
+# Install Dependencies & Start Server:
+pip install -r requirements.txt
+python main.py
+```
+Server runs at **http://localhost:8000**
+Interactive Swagger Docs: **http://localhost:8000/docs**
+
+### 3. Frontend Setup (React + Vite)
+```bash
+cd ../frontend
+npm install
+
+# Start Vite Development Server with Local Network Exposure:
+npm run dev -- --host
+```
+Web Dashboard runs at **http://localhost:5173**
+
+---
+
+## 📡 API Reference
+
+| Method | Endpoint | Description | Auth Required |
+|---|---|---|:---:|
+| `GET` | `/api/health` | Service health & engine status check | No |
+| `GET` | `/api/athletes` | Retrieve registered athlete roster & physical metrics | No |
+| `POST` | `/api/analyze` | Upload video, calculate kinematic vectors, & generate risk score | No |
+| `GET` | `/api/download-video/{filename}` | Download processed & skeleton-annotated MP4 clip | No |
+| `POST` | `/auth/login` | User authentication & JWT issuance | No |
+| `GET` | `/predict` | Multi-joint risk predictions | Yes |
+| `GET` | `/report` | Comprehensive clinical JSON assessment | Yes |
+
+---
+
+## 👤 Author
+
+**Rachit Patnaik**
+B.Tech Computer Science and Engineering (Data Science), Siksha 'O' Anusandhan University (ITER)
+GitHub: [@Rachit-Patnaik](https://github.com/Rachit-Patnaik)
+
+---
+
+<div align="center">
+
+**⭐ If this project helped you, consider giving it a star!**
+
+</div>
