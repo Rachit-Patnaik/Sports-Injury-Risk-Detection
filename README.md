@@ -33,18 +33,18 @@ Sports injuries are often preceded by subtle, repeatable movement faults — com
 
 | Dashboard | Live Analysis |
 |---|---|
-| ![Dashboard](./assets/dashboard.png.png) | ![Live Analysis](./assets/livescreen.png.png) |
+| ![Dashboard](./final%20review/assets/dashboard.png.png) | ![Live Analysis](./final%20review/assets/livescreen.png.png) |
 
 | AI Insights | Athlete Profile |
 |---|---|
-| ![AI Insights](./assets/AiInsights.png.png) | ![Profile](./assets/Profile.png.png) |
+| ![AI Insights](./final%20review/assets/AiInsights.png.png) | ![Profile](./final%20review/assets/Profile.png.png) |
 
 | Athletes List | Reports |
 |---|---|
-| ![Profiles](./assets/Profiles.png.png) | ![Reports](./assets/Reports.png.png) |
+| ![Profiles](./final%20review/assets/Profiles.png.png) | ![Reports](./final%20review/assets/Reports.png.png) |
 
 <p align="center">
-  <img src="./assets/Downloadedpdf.png.png" alt="Downloaded Clinical PDF Report" width="600"/>
+  <img src="./final%20review/assets/Downloadedpdf.png.png" alt="Downloaded Clinical PDF Report" width="600"/>
   <br/><em>Downloaded clinical PDF report with QR verification</em>
 </p>
 
